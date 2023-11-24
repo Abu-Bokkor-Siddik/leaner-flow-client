@@ -1,0 +1,24 @@
+[
+    {
+      "id": 1,
+      "image": "path/to/image1.jpg",
+      "name": "John Doe",
+      "title": "Developer",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": 2,
+      "image": "path/to/image2.jpg",
+      "name": "Jane Smith",
+      "title": "Designer",
+      "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+      "id": 3,
+      "image": "path/to/image3.jpg",
+      "name": "Bob Johnson",
+      "title": "Manager",
+      "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."
+    }
+  ]
+  

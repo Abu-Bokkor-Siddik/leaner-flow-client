@@ -15,6 +15,7 @@ import {
   useQuery,
 } from "@tanstack/react-query";
 import AuthProvidev from "./auth/AuthProvidev.jsx";
+import Dynamic from "./components/Dynamic.jsx";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +36,11 @@ const router = createBrowserRouter([
       {
         path: "/signup",
         element: <SignUp></SignUp>,
+      },
+      {
+        path: "/card/:id",
+        element: <Dynamic></Dynamic>,
+        loader:({params})=> fetch(`http://localhost:3005/card/${params.id}`)
       },
     ],
   },

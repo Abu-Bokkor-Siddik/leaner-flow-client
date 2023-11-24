@@ -4,7 +4,7 @@ import { AuthContex } from "../auth/AuthProvidev"
 
 
 const Login = () => {
-  const {logins}=useContext(AuthContex)
+  const {logins,google}=useContext(AuthContex)
 
   const loginhandels =(e)=>{
 e.preventDefault()
@@ -14,6 +14,15 @@ console.log(email,password)
 
 logins(email,password)
 .then(res => console.log(res))
+
+  }
+  // with google 
+  const googles =()=>{
+    google()
+    .then(res =>{
+      // todo work info 
+      console.log(res)
+    })
 
   }
   return (
@@ -43,7 +52,7 @@ logins(email,password)
             <button className="btn btn-primary">Login</button>
           </div>
         </form>
-        <button  className='btn btn-primary mx-8'>google</button>
+        <button onClick={googles} className='btn btn-primary mx-8'>google</button>
       </div>
     </div>
   </div></div>
