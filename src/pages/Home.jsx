@@ -6,13 +6,17 @@ import Swiperss from "../share/Swiperss"
 import CardHome from "../components/CardHome"
 import { useQuery } from "@tanstack/react-query"
 import axios from "axios"
+import useTan from "../hooks/useTan"
+import useAnnouce from "../hooks/useAnnouce"
 
 
 const Home = () => {
   // annoucement data 
   const [search,setsearch]=useState('')
+  // test
+  // const {data:card}=useTan()
 
-  const{data,refetch,isLoading}=useQuery({
+ const{data,refetch,isLoading}=useQuery({
     queryKey:['card',search],
     queryFn:async()=>{
       const data = await axios.get(`http://localhost:3005/card?tag=${search}`)
@@ -24,10 +28,13 @@ const Home = () => {
   console.log('tan',data)
   const[ dataes,setdataes] =useState([])
     useEffect(()=>{
-        fetch('/annouce.json')
+        fetch('http://localhost:3005/annouce')
         .then(res=> res.json())
         .then(data => setdataes(data))
     },[])
+  // test 
+  // const {data:dataess}=useAnnouce()
+  // console.log(dataes.length)
 
   return (
     <div>
@@ -35,7 +42,7 @@ const Home = () => {
     <Banner setsearch={setsearch}></Banner>
 
     {/**home card  */}
-    {isLoading?"loading" :<CardHome data={data} refetch={refetch} ></CardHome>}
+    {isLoading?"loading" :<CardHome dataes={data} refetch={refetch} ></CardHome>}
     <div >
     <h1 className="text-center text-4xl my-28">OFFERS TO USE THIS SIDE.HERE SOME DEMO TAGS</h1>
     <Swiperss></Swiperss>
@@ -46,7 +53,7 @@ const Home = () => {
     {/**annoucement  */}
     <div className=" grid grid-cols-3 gap-5  max-w-[1200px] mx-auto">
     {
-      dataes?.map(item => <Annoucement key={item.id} item={item}></Annoucement>)
+      dataes?.map(item => <Annoucement key={item._id} item={item}></Annoucement>)
     }
     </div>
     {/**end */}

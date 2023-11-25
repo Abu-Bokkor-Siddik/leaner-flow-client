@@ -6,19 +6,23 @@ import axios from "axios";
 const CardDynamic = ({data}) => {
  
 
+// up 
   const [count,setcount]= useState(data.upvote)
   // test 
   const [counttow,setcounttow]=useState( data.upvote)
 
   console.log(count,'main')
-  
+  // down functionality
+  const [down,setdown]=useState(data.downvote)
+  // test 
+  const [downtow,setdowntow]=useState( data.downvote)
 
   const handleI = ()=>{
     setcount(count+1)
     
     //  setcounttow(count)
      console.log(count,'handleI')
-    const upvote ={upvote:count}
+    const upvote ={upvote:count,downvote:downtow}
     axios.put(`http://localhost:3005/card/${data._id}`,upvote)
     .then(res => {
       console.log(res.data)
@@ -33,24 +37,24 @@ const CardDynamic = ({data}) => {
     
   }
   const handleD=()=>{
-   if(count>0){
-    setcount(count-1)
-    // setcounttow(count-1)
-    console.log(count,'data dd')
-    const upvote ={upvote:count}
+    setdown(down+1)
+    console.log(down)
+    
+    const downvote ={ upvote:counttow,downvote:down}
+    console.log(downvote)
 
-    axios.put(`http://localhost:3005/card/${data._id}`,upvote)
+    axios.put(`http://localhost:3005/card/${data._id}`,downvote)
     .then(res => {
       console.log(res.data)
       if(res.data. modifiedCount&&count>0){
-        setcounttow(count)
+        setdowntow(down)
       
     }
     })
 
 
    
-   }
+ 
   }
 
   return (
@@ -75,6 +79,7 @@ const CardDynamic = ({data}) => {
     <div className="flex justify-evenly items-center" >
     <button onClick={handleI} className="btn btn-accent"><BiSolidUpvote /> </button><h1 className="mx-2">{counttow}</h1>
     <button onClick={handleD} className="btn btn-accent"><BiSolidDownvote/> </button>
+    <h1>{downtow}</h1>
     <button className="btn btn-accent"><FaCommentAlt /> </button>
     <button className="btn btn-accent"><FaRegShareSquare /></button>
     </div>
