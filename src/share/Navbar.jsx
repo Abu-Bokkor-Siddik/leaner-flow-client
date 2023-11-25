@@ -1,20 +1,22 @@
 import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContex } from "../auth/AuthProvidev";
+import { IoMdNotifications } from "react-icons/io";
+import useAnnouce from "../hooks/useAnnouce";
 
 const Navbar = () => {
- 
-  const {user,logout}=useContext(AuthContex)
+  const { user, logout } = useContext(AuthContex);
   const [isopen, setisopen] = useState(false);
   console.log(isopen);
 
-  const logs = ()=>{
-    logout()
-    .then(res=> {
-      console.log(res)
-      setisopen(false)
-    })
-  }
+  const logs = () => {
+    logout().then((res) => {
+      console.log(res);
+      setisopen(false);
+    });
+  };
+  // announce count 
+  const{data}=useAnnouce()
 
   return (
     <div>
@@ -61,50 +63,49 @@ const Navbar = () => {
                 <div className="menu menu-horizontal">
                   {/* Navbar menu content here */}
 
-                  <div className="flex flex-2 gap-3 justify-center items-center  ">
+                  <div className="flex flex-2 gap-7 justify-center items-center  ">
                     <NavLink className="text-xl font-semibold" to="/">
                       Home
                     </NavLink>
 
-                    <NavLink className="text-xl font-semibold" to="/create">
+                    <NavLink className="text-xl font-semibold" to="/member">
                       Membership
                     </NavLink>
-                    <NavLink className="text-xl font-semibold" to="/create">
-                      Notification icon
-                    </NavLink>
-                    <NavLink className="text-xl font-semibold" to="/create">
+                    <div>
+                      <button className="btn">
+                        <IoMdNotifications></IoMdNotifications>
+                        <div className="badge ">{data?.length}</div>
+                      </button>
+                    </div>
+                    <NavLink className="text-xl font-semibold" to="/login">
                       Join US
                     </NavLink>
                   </div>
                   {/** user name and profile would be here  */}
                   <div className="flex justify-center items-center text-xl font-semibold mx-10 ">
-                    
-                    {user&&<div className="avatar">
-                      <div
-                        onClick={() => setisopen(!isopen)}
-                        className="w-16 rounded-full cursor-pointer mx-10"
-                      >
-                        <img src={user?.photoURL} />
-                      </div>
-                    </div>}
-                    {isopen && (
-                      <div className="absolute top-32 text-start w-36 bg-slate-50 h-auto rounded-xl p-3">
-                      
-                      <p>{user?.displayName}</p>
-                     <Link> <p>dashboard</p></Link>
-                      
-
-                      <button onClick={logs} className="btn btn-accent mx-3">logOut</button>
-                    
-                      
-                      
-                      
+                    {user && (
+                      <div className="avatar">
+                        <div
+                          onClick={() => setisopen(!isopen)}
+                          className="w-16 rounded-full cursor-pointer mx-10"
+                        >
+                          <img src={user?.photoURL} />
+                        </div>
                       </div>
                     )}
-                    
-                    <NavLink to="/login">
-                <button className="btn btn-accent ">login</button>
-              </NavLink>
+                    {isopen && (
+                      <div className="absolute top-32 text-start w-36 bg-slate-50 h-auto rounded-xl p-3">
+                        <p>{user?.displayName}</p>
+                        <Link to="/dashboard">
+                          
+                          <p>dashboard</p>
+                        </Link>
+
+                        <button onClick={logs} className="btn btn-accent mx-3">
+                          logOut
+                        </button>
+                      </div>
+                    )}
                   </div>
                   <div className="flex gap-3 justify-center items-center  "></div>
                 </div>
@@ -129,10 +130,7 @@ const Navbar = () => {
               <NavLink to="/create">Membership</NavLink>
               <NavLink to="/create">Notification icon</NavLink>
               <NavLink to="/create">Join US</NavLink>
-              <button  className="btn btn-accent ">
-                logOut
-              </button>
-              :{" "}
+              <button className="btn btn-accent ">logOut</button>:{" "}
               <NavLink to="/login">
                 <button className="btn btn-accent ">login</button>
               </NavLink>

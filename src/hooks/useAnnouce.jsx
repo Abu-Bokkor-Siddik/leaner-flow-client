@@ -5,7 +5,7 @@ import axios from "axios"
 const useAnnouce = () => {
 
   const {data,refetch}=useQuery({
-        queryKey:["datavote"],
+        queryKey:["announce"],
         queryFn:async()=>{
             const data = await axios.get('http://localhost:3005/annouce')
             return data.data

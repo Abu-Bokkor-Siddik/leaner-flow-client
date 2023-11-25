@@ -10,6 +10,9 @@ const CardHome = ({dataes}) => {
   
   const [datas,setdatas]=useState(dataes)
   const{data,refetch}=useTan()
+// text for
+
+
 console.log(data,'vote')
 const difference = ()=>{
   setdatas(data)

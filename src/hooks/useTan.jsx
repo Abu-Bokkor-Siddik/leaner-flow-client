@@ -5,7 +5,7 @@ import { AuthContex } from "../auth/AuthProvidev"
 
 
 const useTan = () => {
-    // const {user}=useContext(AuthContex)
+    
     const {data,refetch}=useQuery({
         queryKey:["datavote"],
         queryFn:async()=>{

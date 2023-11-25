@@ -2,16 +2,19 @@ import { useContext } from "react"
 import { Link } from "react-router-dom"
 import { AuthContex } from "../auth/AuthProvidev"
 import { imgUpload } from "../hooks/Imageup"
+import axios from "axios"
 
 
 const SignUp = () => {
   const {user,signs,profile}=useContext(AuthContex)
+   
   const signup = async (e)=>{
     e.preventDefault()
     const name = e.target.name.value 
     const image = e.target.image.files[0] 
     const email = e.target.email.value 
     const password = e.target.password.value 
+    
     console.log(name,image,email,password)
     try{
       // image uploade 
@@ -19,9 +22,27 @@ const SignUp = () => {
       console.log(data,'data ')
       const regi = await signs(email,password)
       await profile(name,data?.data?.display_url)
-      console.log(data?.data?.display_url,'main url',name)
+      // console.log(data?.data?.display_url,'main url',name)
 
-        console.log(regi,'here data ')
+        // console.log(regi,'here data ')
+
+        const userinfo = {
+          name,
+          email,
+          image:data?.data?.display_url,
+          badge:'bronze'
+
+        }
+        await axios.post('http://localhost:3005/user',userinfo)
+        .then(res => {
+          console.log(res.user)
+          if(res.data.insertedId){
+            alert('added ')
+          
+          }
+        
+        })
+        console.log(userinfo,'user info here')
     }catch(err){
       console.log(err)
     }

@@ -2,6 +2,7 @@ import { useState } from "react"
 import { FaCommentAlt, FaRegShareSquare } from "react-icons/fa";
 import { BiSolidDownvote, BiSolidUpvote } from "react-icons/bi";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const CardDynamic = ({data}) => {
  
@@ -81,7 +82,7 @@ const CardDynamic = ({data}) => {
     <button onClick={handleD} className="btn btn-accent"><BiSolidDownvote/> </button>
     <h1>{downtow}</h1>
     <button className="btn btn-accent"><FaCommentAlt /> </button>
-    <button className="btn btn-accent"><FaRegShareSquare /></button>
+<Link to={`/share/${data._id}`}><button className="btn btn-accent"><FaRegShareSquare /></button></Link>
     </div>
 </div>
     
