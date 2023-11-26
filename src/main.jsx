@@ -27,6 +27,7 @@ import AdminP from "./admin/AdminP.jsx";
 import ManageU from "./admin/ManageU.jsx";
 import Reported from "./admin/Reported.jsx";
 import MakeAn from "./admin/MakeAn.jsx";
+import Payment from "./user/Payment.jsx";
 
 const queryClient = new QueryClient();
 
@@ -60,6 +61,10 @@ const router = createBrowserRouter([
       {
         path: "/member",
         element: <Privet><Member></Member></Privet>,
+      },
+      {
+        path: "/payment",
+        element: <Payment></Payment>,
       },
     ],
   },
