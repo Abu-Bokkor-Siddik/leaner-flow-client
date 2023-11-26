@@ -56,7 +56,7 @@ useEffect(()=>{
     }
 },[])
 
-    const info= {user,signs,logout,logins,profile,google}
+    const info= {user,signs,logout,logins,profile,google,loading}
   return (
     <AuthContex.Provider value={info}>
            {children}

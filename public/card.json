@@ -5,7 +5,7 @@
     "title": "Title 1",
     "description": "Description 1",
     "tag": "english",
-    "date": "2023-01-05",
+    "date": "11/24/2023, 5:45:19 PM",
     "upvote": 20,
     "downvote": 5
   },
@@ -15,7 +15,7 @@
     "title": "Title 2",
     "description": "Description 2",
     "tag": "javascript",
-    "date": "2023-02-10",
+    "date": "11/23/2023, 5:40:19 PM",
     "upvote": 15,
     "downvote": 3
   },
@@ -25,7 +25,7 @@
     "title": "Title 3",
     "description": "Description 3",
     "tag": "bkash",
-    "date": "2023-03-15",
+    "date": "11/22/2023, 5:00:19 PM",
     "upvote": 25,
     "downvote": 8
   },
@@ -35,7 +35,7 @@
     "title": "Title 4",
     "description": "Description 4",
     "tag": "chat gpt",
-    "date": "2023-04-20",
+    "date": "11/22/2023, 5:30:19 PM",
     "upvote": 18,
     "downvote": 2
   }
