@@ -1,5 +1,6 @@
 import useMyP from "../hooks/useMyP"
 import { LuBadgeCheck } from "react-icons/lu";
+import { TbPremiumRights } from "react-icons/tb";
 
 
 
@@ -11,7 +12,10 @@ const Myprofile = () => {
     <div className="card w-96 bg-base-100 flex justify-center items-center shadow-xl">
   
     <div className="avatar ">
-    {data?.badge==='bronze'&&<LuBadgeCheck className="text-orange-950 rounded w-5 h-5"></LuBadgeCheck>}
+    {data?.badge==='bronze'&&<LuBadgeCheck className="text-orange-950 rounded w-7 h-7"></LuBadgeCheck>}
+
+    {data?.badge==='gold'&&<TbPremiumRights className="text-orange-950 rounded w-7 h-7"></TbPremiumRights>}
+
     <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
       <img src={data?.image} />
     </div>
