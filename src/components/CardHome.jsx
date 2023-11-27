@@ -16,7 +16,7 @@ const CardHome = ({dataes}) => {
 console.log(data,'vote')
 const difference = ()=>{
   setdatas(data)
-  // refetch()
+  refetch()
 
 }
   

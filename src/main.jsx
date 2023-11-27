@@ -28,6 +28,7 @@ import ManageU from "./admin/ManageU.jsx";
 import Reported from "./admin/Reported.jsx";
 import MakeAn from "./admin/MakeAn.jsx";
 import Payment from "./user/Payment.jsx";
+import Comment from "./user/Comment.jsx";
 
 const queryClient = new QueryClient();
 
@@ -84,6 +85,12 @@ const router = createBrowserRouter([
         path:"mypost",
         element:<Mypost></Mypost>
       },
+      {
+        path:"comment/:id",
+        element:<Comment></Comment>,
+        loader:({params})=>fetch(`http://localhost:3005/mypost/${params.id}`)
+      },
+      // admin route here ... 
       {
         path:"admin",
         element:<AdminP></AdminP>

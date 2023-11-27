@@ -1,10 +1,17 @@
 import { useContext } from "react"
 import { AuthContex } from "../auth/AuthProvidev"
 import useAxiosP from "../hooks/useAxiosP"
+import useMyP from "../hooks/useMyP"
 
 
 const Add = () => {
   const {user}=useContext(AuthContex)
+  // use hook for single user find  
+  // todo data length baki/..... user find here 
+  const{data}=useMyP()
+  console.log(data,'user single')
+
+
   const axiosp = useAxiosP();
   const fromvaluess = (e)=>{
     e.preventDefault()
@@ -37,7 +44,8 @@ console.log()
     <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col ">
           <div className="card flex-shrink-0  shadow-2xl bg-slate-100 w-auto ">
-            <form  onSubmit={fromvaluess} className="card-body ">
+            {
+              <form  onSubmit={fromvaluess} className="card-body ">
               <p className="text-center text-3xl">Add Item</p>
 
               <div className="grid grid-cols-2 w-auto gap-6 ">
@@ -124,6 +132,7 @@ console.log()
                 <button className="btn btn-primary">Add</button>
               </div>
             </form>
+            }
           </div>
         </div>
       </div>
