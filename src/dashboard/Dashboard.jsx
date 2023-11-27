@@ -4,10 +4,13 @@ import { IoAdd } from "react-icons/io5";
 import { MdLocalPostOffice } from "react-icons/md";
 import { FaHome } from "react-icons/fa";
 import { MdOutlinePayment } from "react-icons/md";
+import useAdmin from "../hooks/useAdmin";
 
 const Dashboard = () => {
     // todo 
-    const isAdmin = false;
+    const[isAdmin]=useAdmin()
+    console.log(isAdmin,'here')
+    // const isAdmin =true;
   return (
     <div className=" max-w-[1250px] mx-auto min-h-[800px] my-20">
     <div className="flex gap-36">
@@ -28,7 +31,7 @@ const Dashboard = () => {
     Reported</NavLink></li>
     <li><NavLink to='/dashboard/make'>
     <IoAdd></IoAdd>
-    Make</NavLink></li>
+    Make Announce</NavLink></li>
         
         
         
