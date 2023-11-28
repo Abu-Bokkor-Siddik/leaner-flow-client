@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react"
 
-
+// http://localhost:3005/tag
 const Offer = () => {
     const[ datas,setdatas] =useState([])
     useEffect(()=>{
-        fetch('/fake.json')
+        fetch('http://localhost:3005/tag')
         .then(res=> res.json())
         .then(data => setdatas(data))
     },[])
@@ -20,7 +20,7 @@ const Offer = () => {
     
    <div className="grid grid-cols-4 gap-7">
    {
-    datas?.map(item =><button key={item.id} className="btn btn-primary ">{item.button}</button> )
+    datas?.map(item =><button key={item._id} className="btn btn-primary ">{item.tag}</button> )
 }
    </div>
     

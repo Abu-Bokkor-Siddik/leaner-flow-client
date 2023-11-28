@@ -9,7 +9,7 @@ const Comment = () => {
     const axiosP=useAxiosP()
     // console.log(singledata)
     const{data}=useComment(singledata.title)
-    // console.log(data,'form hook comment')
+    console.log(data,'form hook comment')
     const [report,setreport]=useState(false)
     const [selectvalue,setselectvalue]=useState('')
 

@@ -6,12 +6,14 @@ import useAxiosP from "../hooks/useAxiosP"
 import axios from "axios"
 import { useState } from "react"
 import { Link } from "react-router-dom"
+import Swal from 'sweetalert2'
+import useThree from "./useThree"
 const Mypost = () => {
   const axiosP=useAxiosP()
   const {user}=useContext(AuthContex)
   // check data state 
   
-  const{data,error,isLoading}=useQuery({
+  const{data,error,isLoading,refetch}=useQuery({
     queryKey:['mypost',user?.email],
     queryFn:async()=>{
     const result = await axiosP.get(`/mypost?email=${user.email}`)
@@ -25,7 +27,36 @@ const Mypost = () => {
   console.log(data&&data)
   // console.log(error)
 
+const handledelete=(id)=>{
+  console.log(id)
 
+  Swal.fire({
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, delete it!"
+  }).then((result) => {
+    if (result.isConfirmed) {
+     
+      const res = axios.delete(`http://localhost:3005/mypost/${id}`)
+      .then(result =>{
+        console.log(result.data)
+        if(result.data.deletedCount>0){
+          refetch()
+          Swal.fire({
+            title: "Deleted!",
+            text: "Your  card has been deleted.",
+            icon: "success"
+          });
+
+        }
+      })
+    }
+  });
+}
 
   return (
     <div>
@@ -50,7 +81,7 @@ const Mypost = () => {
               <td>{item.title}</td>
               <td>Upvote : {item.upvote} Downvote : {item.downvote}</td>
               <td><Link to={`/dashboard/comment/${item._id}`}><button>Comment</button></Link></td>
-              <td><button>Delete</button></td>
+              <td><button onClick={()=>handledelete(item._id)}>Delete</button></td>
             </tr>)
           }
          

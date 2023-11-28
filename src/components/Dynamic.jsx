@@ -3,6 +3,7 @@ import CardDynamic from "./CardDynamic";
 import { useContext } from "react";
 import { AuthContex } from "../auth/AuthProvidev";
 import useAxiosP from "../hooks/useAxiosP";
+import useComment from "../hooks/useComment";
 
 
 const Dynamic = () => {
@@ -38,6 +39,12 @@ const Dynamic = () => {
 
         // console.log(comments)
     }
+    
+
+
+// here is comment count use hook okk
+    const{data:datas}=useComment(data.title)
+    console.log(datas)
   return (
     <div className="min-h-[800px] max-w-[600px] mx-auto ">
   

@@ -29,6 +29,7 @@ import Reported from "./admin/Reported.jsx";
 import MakeAn from "./admin/MakeAn.jsx";
 import Payment from "./user/Payment.jsx";
 import Comment from "./user/Comment.jsx";
+import AdminPrivet from "./auth/AdminPrivet.jsx";
 
 const queryClient = new QueryClient();
 
@@ -52,7 +53,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/card/:id",
-        element: <Dynamic></Dynamic>,
+        element: <Privet><Dynamic></Dynamic></Privet>,
         loader:({params})=> fetch(`http://localhost:3005/card/${params.id}`)
       },
       {
@@ -93,19 +94,19 @@ const router = createBrowserRouter([
       // admin route here ... 
       {
         path:"admin",
-        element:<AdminP></AdminP>
+        element:<AdminPrivet><AdminP></AdminP></AdminPrivet>
       },
       {
         path:"manage",
-        element:<ManageU></ManageU>
+        element:<AdminPrivet><ManageU></ManageU></AdminPrivet>
       },
       {
         path:"reported",
-        element:<Reported></Reported>
+        element:<AdminPrivet><Reported></Reported></AdminPrivet>
       },
       {
         path:"make",
-        element:<MakeAn></MakeAn>
+        element:<AdminPrivet><MakeAn></MakeAn></AdminPrivet>
       },
     ]
   }

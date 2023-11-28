@@ -22,10 +22,10 @@ const Swiperss = () => {
     
     className='w-[900px] mx-auto'
   >
-    <SwiperSlide ><img className='mx-auto' src="https://i.ibb.co/MfttmVk/Assignment-Writing.jpg" alt="" /></SwiperSlide>
-    <SwiperSlide><img className='mx-auto' src="https://i.ibb.co/MfttmVk/Assignment-Writing.jpg" alt="" /></SwiperSlide>
-    <SwiperSlide><img className='mx-auto' src="https://i.ibb.co/MfttmVk/Assignment-Writing.jpg" alt="" /></SwiperSlide>
-    <SwiperSlide><img className='mx-auto' src="https://i.ibb.co/MfttmVk/Assignment-Writing.jpg" alt="" /></SwiperSlide>
+    <SwiperSlide ><img className='mx-auto' src="https://i.ibb.co/kBGZkTM/bkash-logo-0.jpg" alt="" /></SwiperSlide>
+    <SwiperSlide><img className='mx-auto' src="https://i.ibb.co/gMdNv66/download-15.jpg" alt="" /></SwiperSlide>
+    <SwiperSlide><img className='mx-auto' src="https://i.ibb.co/FwTTq8t/download-16.jpg" alt="" /></SwiperSlide>
+    <SwiperSlide><img className='mx-auto' src="https://i.ibb.co/VtkX8s6/download-5.png" alt="" /></SwiperSlide>
     
   </Swiper>
   )

@@ -1,12 +1,17 @@
 import useMyP from "../hooks/useMyP"
 import { LuBadgeCheck } from "react-icons/lu";
 import { TbPremiumRights } from "react-icons/tb";
+import useThree from "./useThree";
 
 
 
 const Myprofile = () => {
     const{data}=useMyP()
     console.log(data?.email)
+
+    // here is three post of user 
+const {three}=useThree()
+console.log(three,'kfakfka')
   return (
     <div>
     <div className="card w-96 bg-base-100 flex justify-center items-center shadow-xl">
@@ -33,6 +38,10 @@ const Myprofile = () => {
     </div>
   </div>
 </div>
+
+{/**here is three data */}
+<div> hi</div>
+
     
     </div>
   )
