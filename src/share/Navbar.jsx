@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContex } from "../auth/AuthProvidev";
 import { IoMdNotifications } from "react-icons/io";
 import useAnnouce from "../hooks/useAnnouce";
+import useAdmin from "../hooks/useAdmin";
 
 const Navbar = () => {
   const { user, logout } = useContext(AuthContex);
@@ -17,6 +18,8 @@ const Navbar = () => {
   };
   // announce count 
   const{data}=useAnnouce()
+  const[isAdmin]=useAdmin()
+  // console.log(isAdmin)
 
   return (
     <div>
@@ -96,10 +99,18 @@ const Navbar = () => {
                     {isopen && (
                       <div className="absolute top-32 text-start w-36 bg-slate-50 h-auto rounded-xl p-3">
                         <p>{user?.displayName}</p>
-                        <Link to="/dashboard">
+                        {
+                          user&& isAdmin&&<Link to="/dashboard/admin">
                           
                           <p>dashboard</p>
                         </Link>
+                        }
+                        {
+                          user&& !isAdmin&&<Link to="/dashboard/myprofile">
+                          
+                          <p>dashboard</p>
+                        </Link>
+                        }
 
                         <button onClick={logs} className="btn btn-accent mx-3">
                           logOut

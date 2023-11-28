@@ -10,7 +10,7 @@ const useComment = (title) => {
     const {data,refetch}=useQuery({
         queryKey:['comments',user?.email],
         queryFn:async()=>{
-            const result = await axiosP.get(`/comment?email=${user.email}&title=${title}`)
+            const result = await axiosP.get(`/comments/title?title=${title}`)
             return result.data
         }
     })
