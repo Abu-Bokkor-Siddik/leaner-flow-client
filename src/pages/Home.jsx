@@ -53,7 +53,7 @@ const Home = () => {
     
     </div>
     {/**annoucement  */}
-    <div className=" grid grid-cols-3 gap-5  max-w-[1200px] mx-auto">
+    <div className=" grid grid-cols-1 lg:grid-cols-3 gap-5  max-w-[1200px] mx-auto">
     {
       dataes?.map(item => <Annoucement key={item._id} item={item}></Annoucement>)
     }

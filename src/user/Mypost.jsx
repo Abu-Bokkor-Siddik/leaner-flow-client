@@ -4,10 +4,10 @@ import { AuthContex } from "../auth/AuthProvidev"
 import { useQuery } from "@tanstack/react-query"
 import useAxiosP from "../hooks/useAxiosP"
 import axios from "axios"
-import { useState } from "react"
+// import { useState } from "react"
 import { Link } from "react-router-dom"
 import Swal from 'sweetalert2'
-import useThree from "./useThree"
+// import useThree from "./useThree"
 const Mypost = () => {
   const axiosP=useAxiosP()
   const {user}=useContext(AuthContex)

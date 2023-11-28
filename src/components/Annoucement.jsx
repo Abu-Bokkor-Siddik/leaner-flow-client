@@ -1,17 +1,18 @@
 
 
 const Annoucement = ({item}) => {
+  console.log(item)
   return (
     <div>
-    <div className=" max-w-[400px] h-auto my-10 shadow-2xl bg-red-200 p-5">
+    <div className=" max-w-[300px] h-auto my-10 rounded-xl shadow-2xl bg-slate-50 p-5">
     <div className="flex gap-3 items-center">
 
     <div className="avatar my-2">
     <div className="w-14 rounded-full">
-      <img src="https://daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg" />
+      <img src={item?.image} />
     </div>
     </div>
-    <div> name:</div>
+    <div>Name : {item?.name}</div>
     
     
     </div>

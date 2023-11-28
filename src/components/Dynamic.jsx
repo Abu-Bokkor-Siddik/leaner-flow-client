@@ -43,12 +43,12 @@ const Dynamic = () => {
 
 
 // here is comment count use hook okk
-    const{data:datas}=useComment(data.title)
+    const{data:datas,refetch}=useComment(data.title)
     console.log(datas)
   return (
     <div className="min-h-[800px] max-w-[600px] mx-auto ">
   
-    <CardDynamic data={data}></CardDynamic>
+    <CardDynamic data={data} datas={datas} refetch={refetch}></CardDynamic>
     <div className=" mx-auto flex flex-col justify-center items-center">
     <form  onSubmit={handel}>
     <textarea name="comment" className="textarea textarea-bordered" placeholder="Bio"></textarea>

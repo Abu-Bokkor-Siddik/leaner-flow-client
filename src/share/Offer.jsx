@@ -13,14 +13,14 @@ const Offer = () => {
     <div className="max-w-1200px mx-auto h-auto flex justify-center my-16 ">
 
 <div>
-<div className="card w-[700px] bg-base-100 shadow-2xl  ">
+<div className="card w-auto lg:w-[700px] lg:min-h-[300px] bg-base-100 shadow-2xl  ">
   <div className=" ">
     <h2 className="card-title justify-center my-6">SEARCH THIS TAGS</h2>
     
     
-   <div className="grid grid-cols-4 gap-7">
+   <div className="grid grid-cols-3 p-5 gap-7 justify-center items-center">
    {
-    datas?.map(item =><button key={item._id} className="btn btn-primary ">{item.tag}</button> )
+    datas?.map(item =><button key={item._id} className="btn btn-outline btn-sm ">{item.tag}</button> )
 }
    </div>
     

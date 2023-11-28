@@ -4,7 +4,7 @@ import { BiSolidDownvote, BiSolidUpvote } from "react-icons/bi";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-const CardDynamic = ({data}) => {
+const CardDynamic = ({data,datas,refetch}) => {
  
 
 // up 
@@ -29,6 +29,7 @@ const CardDynamic = ({data}) => {
       console.log(res.data)
       if(res.data. modifiedCount&&count>0){
           setcounttow(count)
+          refetch()
         
       }
       
@@ -49,6 +50,7 @@ const CardDynamic = ({data}) => {
       console.log(res.data)
       if(res.data. modifiedCount&&count>0){
         setdowntow(down)
+        refetch()
       
     }
     })
@@ -60,29 +62,34 @@ const CardDynamic = ({data}) => {
 
   return (
     <div>
-    <div className=" max-w-[500px] h-auto my-10 shadow-2xl bg-red-200 p-5">
+    <div className=" max-w-[500px] h-auto my-20 shadow-2xl bg-slate-50 rounded-xl p-9">
     <div className="flex gap-3 justify-between items-center">
 
     <div className="avatar my-2">
     <div className="w-14 rounded-full">
-      <img src="https://daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg" />
+      <img src={data?.image} />
     </div>
     </div>
-    <div> name:</div>
-    <div>timefajfa</div>
+    <div>Name : {data?.name}</div>
+    <div>Time : {data?.date}</div>
     
     
     </div>
 
-    <h1 className="my-2">title:</h1>
+    <div className="flex flex-col justify-start gap-2 pl-5 py-3"> 
+    <h1>Post Title : {data?.title}</h1>
+    <h1>Tag : {data?.tag}</h1>
+    <h1>Description : {data?.description}</h1>
+    
+    </div>
     
 
     <div className="flex justify-evenly items-center" >
     <button onClick={handleI} className="btn btn-accent"><BiSolidUpvote /> </button><h1 className="mx-2">{counttow}</h1>
     <button onClick={handleD} className="btn btn-accent"><BiSolidDownvote/> </button>
     <h1>{downtow}</h1>
-    <button className="btn btn-accent"><FaCommentAlt /> </button>
-<Link to={`/share/${data._id}`}><button className="btn btn-accent"><FaRegShareSquare /></button></Link>
+    <button className="btn btn-accent"><FaCommentAlt /><h1>{datas?.length}</h1> </button>
+<Link to={`/share/${data._id}`}> <button className="btn btn-accent"><FaRegShareSquare /></button></Link>
     </div>
 </div>
     

@@ -30,6 +30,7 @@ import MakeAn from "./admin/MakeAn.jsx";
 import Payment from "./user/Payment.jsx";
 import Comment from "./user/Comment.jsx";
 import AdminPrivet from "./auth/AdminPrivet.jsx";
+import Errore from "./pages/Errore.jsx";
 
 const queryClient = new QueryClient();
 
@@ -37,7 +38,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
-    errorElement: <div>error</div>,
+    errorElement: <Errore></Errore>,
     children: [
       {
         path: "/",
