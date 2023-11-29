@@ -8,7 +8,7 @@ const useMyP = () => {
     const {data,refetch}=useQuery({
         queryKey:["single",user?.email],
         queryFn:async()=>{
-            const data = await axios.get(`http://localhost:3005/user?email=${user.email}`)
+            const data = await axios.get(`https://learn-server-six.vercel.app/user?email=${user.email}`)
             return data.data
         }
     })

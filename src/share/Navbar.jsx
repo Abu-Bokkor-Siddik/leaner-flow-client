@@ -27,9 +27,9 @@ const Navbar = () => {
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col">
           {/* Navbar */}
-          <div className="w-full navbar bg-base-300">
+          <div className=" lg:w-auto navbar bg-base-300">
             {/**navbar 1200px */}
-            <div className=" w-full max-w-[1400px] mx-auto ">
+            <div className=" max-w-[425px] lg:max-w-[1400px] mx-auto ">
               <div className="flex-none lg:hidden">
                 <label
                   htmlFor="my-drawer-3"
@@ -97,18 +97,18 @@ const Navbar = () => {
                       </div>
                     )}
                     {isopen && (
-                      <div className="absolute top-32 text-start w-36 bg-slate-50 h-auto rounded-xl p-3">
+                      <div className="absolute  top-32 text-start w-44 bg-slate-50 h-auto rounded-xl p-3">
                         <p>{user?.displayName}</p>
                         {
                           user&& isAdmin&&<Link to="/dashboard/admin">
                           
-                          <p>dashboard</p>
+                          <p className="my-5">dashboard</p>
                         </Link>
                         }
                         {
                           user&& !isAdmin&&<Link to="/dashboard/myprofile">
                           
-                          <p>dashboard</p>
+                          <p className="my-5">dashboard</p>
                         </Link>
                         }
 
@@ -138,13 +138,13 @@ const Navbar = () => {
               <NavLink className="" to="/">
                 Home
               </NavLink>
-              <NavLink to="/create">Membership</NavLink>
-              <NavLink to="/create">Notification icon</NavLink>
-              <NavLink to="/create">Join US</NavLink>
-              <button className="btn btn-accent ">logOut</button>:{" "}
+              <NavLink to="/member">Membership</NavLink>
+              <NavLink ><IoMdNotifications></IoMdNotifications></NavLink>
+              <NavLink to="/login">Join US</NavLink>
+              {user?<button onClick={logs} className="btn btn-accent ">logOut</button>:
               <NavLink to="/login">
-                <button className="btn btn-accent ">login</button>
-              </NavLink>
+                <button className="btn btn-accent  ">login</button>
+              </NavLink>}
             </div>
           </div>
         </div>

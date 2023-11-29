@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 const axiosP = axios.create({
-    baseURL: 'http://localhost:3005',
+    baseURL: 'https://learn-server-six.vercel.app',
     
   });
 const useAxiosP = () => {

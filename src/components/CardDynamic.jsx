@@ -24,7 +24,7 @@ const CardDynamic = ({data,datas,refetch}) => {
     //  setcounttow(count)
      console.log(count,'handleI')
     const upvote ={upvote:count,downvote:downtow}
-    axios.put(`http://localhost:3005/card/${data._id}`,upvote)
+    axios.put(`https://learn-server-six.vercel.app/card/${data._id}`,upvote)
     .then(res => {
       console.log(res.data)
       if(res.data. modifiedCount&&count>0){
@@ -45,7 +45,7 @@ const CardDynamic = ({data,datas,refetch}) => {
     const downvote ={ upvote:counttow,downvote:down}
     console.log(downvote)
 
-    axios.put(`http://localhost:3005/card/${data._id}`,downvote)
+    axios.put(`https://learn-server-six.vercel.app/card/${data._id}`,downvote)
     .then(res => {
       console.log(res.data)
       if(res.data. modifiedCount&&count>0){

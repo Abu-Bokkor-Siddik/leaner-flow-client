@@ -4,6 +4,7 @@ import useAxiosP from "../hooks/useAxiosP"
 import useMyP from "../hooks/useMyP"
 import usePostadd from "./usePostadd"
 import { Link} from "react-router-dom";
+import Swal from 'sweetalert2'
 
 
 const Add = () => {
@@ -39,6 +40,13 @@ const Add = () => {
      axiosp.post('/card',CardItem)
      .then(res=>{
       console.log(res.data,'here is post data')
+      if(res.data?.insertedId){
+        Swal.fire({
+          title: "Added successfully",
+          text: "You clicked the button!",
+          icon: "success"
+        });
+      }
      })
 
   }

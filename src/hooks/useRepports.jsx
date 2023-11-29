@@ -7,7 +7,7 @@ const useRepports = () => {
   const { data, refetch } = useQuery({
     queryKey: ["reports"],
     queryFn: async () => {
-      const result = await axios.get("http://localhost:3005/users");
+      const result = await axios.get("https://learn-server-six.vercel.app/users");
       return result.data;
     },
   });

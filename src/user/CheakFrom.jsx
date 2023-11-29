@@ -74,7 +74,7 @@ const CheakFrom = () => {
             
         }
         // put method with email
-        const res = axios.put(`http://localhost:3005/update?email=${user?.email}`,userinfo)
+        const res = axios.put(`https://learn-server-six.vercel.app/update?email=${user?.email}`,userinfo)
         .then(datas=>{
             console.log(datas.data)
         })

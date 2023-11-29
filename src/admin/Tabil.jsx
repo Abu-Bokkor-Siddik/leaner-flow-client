@@ -15,7 +15,7 @@ const Tabil = ({datas,refetch}) => {
           }).then((result) => {
             if (result.isConfirmed) {
              
-              const res = axios.delete(`http://localhost:3005/users/${id}`)
+              const res = axios.delete(`https://learn-server-six.vercel.app/users/${id}`)
               .then(result =>{
                 // console.log(result.data)
                 if(result.data.deletedCount>0){

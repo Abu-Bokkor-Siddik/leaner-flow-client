@@ -1,10 +1,10 @@
-import { Link, useLoaderData } from "react-router-dom";
+import {  useLoaderData } from "react-router-dom";
 import useComment from "../hooks/useComment";
 import { useState } from "react";
 import useAxiosP from "../hooks/useAxiosP";
 import Swal from 'sweetalert2'
 
-// http://localhost:3005/comment?email=mdmasud01833798650&title=Need help
+// https://learn-server-six.vercel.app/comment?email=mdmasud01833798650&title=Need help
 const Comment = () => {
   const singledata = useLoaderData();
   const axiosP = useAxiosP();
@@ -54,6 +54,7 @@ const Comment = () => {
       Swal.fire({
         
         text: "You clicked the button!",
+
         icon: "success",
         html:item
       });

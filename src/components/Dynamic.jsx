@@ -4,13 +4,16 @@ import { useContext } from "react";
 import { AuthContex } from "../auth/AuthProvidev";
 import useAxiosP from "../hooks/useAxiosP";
 import useComment from "../hooks/useComment";
+import { useState } from "react";
 
 
 const Dynamic = () => {
+
     const data = useLoaderData()
     const {user}=useContext(AuthContex)
     const axiosP =useAxiosP()
-
+// state 
+const [sms,setsms]=useState(false)
     console.log(data)
 
 
@@ -33,6 +36,8 @@ const Dynamic = () => {
           console.log(res.data)
           if(res.data.insertedId){
             alert('added comment')
+            refetch()
+            setsms(true)
           }
         })
         console.log(commentinfo)
@@ -45,14 +50,19 @@ const Dynamic = () => {
 // here is comment count use hook okk
     const{data:datas,refetch}=useComment(data.title)
     console.log(datas)
+
+    // disable 
+    const smsdisable = ()=>{
+      setsms(true)
+    }
   return (
     <div className="min-h-[800px] max-w-[600px] mx-auto ">
   
     <CardDynamic data={data} datas={datas} refetch={refetch}></CardDynamic>
     <div className=" mx-auto flex flex-col justify-center items-center">
-    <form  onSubmit={handel}>
-    <textarea name="comment" className="textarea textarea-bordered" placeholder="Bio"></textarea>
-    <div><button className="btn btn-sm mx-12 btn-accent">Comment</button></div>
+    <form   onSubmit={handel}>
+    <textarea  name="comment" className="textarea textarea-bordered lg:min-w-[400px] mx-auto" placeholder="Bio"></textarea>
+    <div className="lg:mx-48 my-5"><button disabled={sms}  className="btn btn-sm  btn-accent">Comment</button></div>
     
     </form>
     

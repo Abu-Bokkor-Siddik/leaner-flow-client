@@ -15,7 +15,7 @@ const ManageU = () => {
   console.log(data)
   const handleradmin = (item)=>{
     // console.log(id)
-    const result =axios.patch(`http://localhost:3005/users/admin${item._id}`)
+    const result =axios.patch(`https://learn-server-six.vercel.app/users/admin${item._id}`)
     .then(res =>{
       refetch()
       console.log(res.data)

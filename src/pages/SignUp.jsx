@@ -33,7 +33,7 @@ const SignUp = () => {
           badge:'bronze'
 
         }
-        await axios.post('http://localhost:3005/user',userinfo)
+        await axios.post('https://learn-server-six.vercel.app/user',userinfo)
         .then(res => {
           console.log(res.user)
           if(res.data.insertedId){

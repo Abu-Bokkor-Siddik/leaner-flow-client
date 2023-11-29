@@ -20,7 +20,7 @@ const Swiperss = () => {
     
     navigation={true} modules={[Navigation,Autoplay]}
     
-    className=' w-auto lg:w-[900px] mx-auto'
+    className=' max-w-[425px] lg:w-[900px] mx-auto'
   >
     <SwiperSlide ><img className='mx-auto' src="https://i.ibb.co/kBGZkTM/bkash-logo-0.jpg" alt="" /></SwiperSlide>
     <SwiperSlide><img className='mx-auto' src="https://i.ibb.co/gMdNv66/download-15.jpg" alt="" /></SwiperSlide>

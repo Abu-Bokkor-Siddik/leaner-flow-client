@@ -9,7 +9,7 @@ const useAdmin = () => {
     const {data:isAdmin,isPending,refetch}=useQuery({
         queryKey:['isadmin',user?.email],
         queryFn:async()=>{
-            const result = await axios.get(`http://localhost:3005/user/admin/${user.email}`)
+            const result = await axios.get(`https://learn-server-six.vercel.app/user/admin/${user.email}`)
             console.log(result.data)
             return result.data.admin
         }

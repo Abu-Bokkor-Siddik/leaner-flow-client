@@ -17,8 +17,8 @@ const Annoucement = ({item}) => {
     
     </div>
 
-    <h1 className="my-2">title:{item.title}</h1>
-    <h1 className="my-3">description : {item.description}</h1>
+    <h1 className="my-2">Title : {item.title}</h1>
+    <h1 className="my-3">Description : {item.description}</h1>
 </div>
     </div>
   )

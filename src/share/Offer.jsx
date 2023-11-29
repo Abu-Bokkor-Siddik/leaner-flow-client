@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react"
 
-// http://localhost:3005/tag
+// https://learn-server-six.vercel.app/tag
 const Offer = () => {
     const[ datas,setdatas] =useState([])
     useEffect(()=>{
-        fetch('http://localhost:3005/tag')
+        fetch('https://learn-server-six.vercel.app/tag')
         .then(res=> res.json())
         .then(data => setdatas(data))
     },[])

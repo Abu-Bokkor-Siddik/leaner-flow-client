@@ -1,8 +1,14 @@
-# React + Vite
+# LEANER FLOW 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project feature 
+- Have an admin dashboard.
+- Have a user dashboard.
+- Anyone can comment in every post.
+- Have a payment stystem .
+- User can feedback in his comment.
+- Admin can Delete any user with valid reason .
 
-Currently, two official plugins are available:
+### Admin functionality 
+- Admin can delete any user with an valid reason .
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [https://forum-e3e2b.web.app/](https://forum-e3e2b.web.app/) 

@@ -41,7 +41,7 @@ const handledelete=(id)=>{
   }).then((result) => {
     if (result.isConfirmed) {
      
-      const res = axios.delete(`http://localhost:3005/mypost/${id}`)
+      const res = axios.delete(`https://learn-server-six.vercel.app/mypost/${id}`)
       .then(result =>{
         console.log(result.data)
         if(result.data.deletedCount>0){

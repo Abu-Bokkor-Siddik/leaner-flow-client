@@ -2,7 +2,7 @@ import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged,
 import { createContext, useEffect, useState } from "react"
 import auth from "../firebase/firebaseConfig"
 import useAxiosP from "../hooks/useAxiosP"
-
+import Swal from 'sweetalert2'
 export const AuthContex= createContext(null)
 
 const AuthProvidev = ({children}) => {
@@ -15,6 +15,7 @@ const AuthProvidev = ({children}) => {
     // register
  const signs =( email, password)=>{
     setloading(true)
+    
     return createUserWithEmailAndPassword(auth,email,password)
   }
   // google 
@@ -37,11 +38,19 @@ const profile =(name,photo)=>{
   // sign out
 const logout = ()=>{
     setloading(true)
+
+   
   return signOut(auth)
   }
 // login
 const logins =(email,password)=>{
     setloading(true)
+
+    Swal.fire({
+      title: "login successfully",
+      text: "You clicked the button!",
+      icon: "success"
+    });
     return signInWithEmailAndPassword(auth,email,password)
   }
 

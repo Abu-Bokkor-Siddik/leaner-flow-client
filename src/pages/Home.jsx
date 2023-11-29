@@ -21,7 +21,7 @@ const Home = () => {
  const{data,refetch,isLoading}=useQuery({
     queryKey:['card',search,user?.email],
     queryFn:async()=>{
-      const data = await axios.get(`http://localhost:3005/card?tag=${search}`)
+      const data = await axios.get(`https://learn-server-six.vercel.app/card?tag=${search}`)
       return data.data
     }
   })
@@ -30,7 +30,7 @@ const Home = () => {
   console.log('tan',data)
   const[ dataes,setdataes] =useState([])
     useEffect(()=>{
-        fetch('http://localhost:3005/annouce')
+        fetch('https://learn-server-six.vercel.app/annouce')
         .then(res=> res.json())
         .then(data => setdataes(data))
     },[])
@@ -53,7 +53,7 @@ const Home = () => {
     
     </div>
     {/**annoucement  */}
-    <div className=" grid grid-cols-1 lg:grid-cols-3 gap-5  max-w-[1200px] mx-auto">
+    <div className=" grid  justify-center items-center grid-cols-1 lg:grid-cols-3 gap-5 md:grid-cols-2  max-w-[1200px] mx-20 lg:mx-auto">
     {
       dataes?.map(item => <Annoucement key={item._id} item={item}></Annoucement>)
     }

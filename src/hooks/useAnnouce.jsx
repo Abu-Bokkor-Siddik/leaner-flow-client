@@ -7,7 +7,7 @@ const useAnnouce = () => {
   const {data,refetch}=useQuery({
         queryKey:["announce"],
         queryFn:async()=>{
-            const data = await axios.get('http://localhost:3005/annouce')
+            const data = await axios.get('https://learn-server-six.vercel.app/annouce')
             return data.data
         }
     })

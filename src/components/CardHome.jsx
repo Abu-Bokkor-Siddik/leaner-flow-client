@@ -14,7 +14,7 @@ const CardHome = ({dataes}) => {
 // text for
 
 
-console.log(data,'vote')
+// console.log(data,'vote')
 const difference = ()=>{
   setdatas(data)
   refetch()
@@ -23,8 +23,8 @@ const difference = ()=>{
   
   return (
    <div>
-   <button onClick={difference} className="btn flex justify-center items-center mx-auto my-5 btn-outline text-center ">Popular base</button>
-   <div className="grid grid-cols-1 lg:grid-cols-3 max-w-[1400px] justify-center items-center pl-8 mx-auto">
+   <button onClick={difference} className="btn flex justify-center items-center  lg:mx-auto my-5 btn-outline text-center ">Popular base</button>
+   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-[1200px] justify-center items-center pl-8 md:pl-2 lg:pl-8 lg:mx-auto">
    {
      datas?.map(item=> <div key={item._id}  className=" max-w-[350px] h-auto my-3 shadow-2xl bg-slate-100 rounded-lg p-3 "><Link to={`/card/${item._id}`}>
      <div className="flex pl-5 gap-1 p-2 justify-between items-center">

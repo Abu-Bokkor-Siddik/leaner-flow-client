@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContex } from "../auth/AuthProvidev";
 import useAxiosP from "../hooks/useAxiosP";
+import Swal from 'sweetalert2'
 
 const Login = () => {
   const { logins, google } = useContext(AuthContex);
@@ -11,9 +12,21 @@ const Login = () => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
+    e.target.reset()
     console.log(email, password);
 
-    logins(email, password).then((res) => console.log(res));
+    logins(email, password)
+    .then((res) => {
+      console.log(res)
+      // reset()
+      // if(res.user){
+      //   Swal.fire({
+      //     title: "login",
+      //     text: "You clicked the button!",
+      //     icon: "success"
+      //   });
+      // }
+    });
   };
   // with google
   const googles = () => {
@@ -30,6 +43,7 @@ const Login = () => {
       axiosP.post('/user',info)
       .then(res =>{
         console.log(res.user)
+        
       })
     });
   };

@@ -55,7 +55,7 @@ const router = createBrowserRouter([
       {
         path: "/card/:id",
         element: <Privet><Dynamic></Dynamic></Privet>,
-        loader:({params})=> fetch(`http://localhost:3005/card/${params.id}`)
+        loader:({params})=> fetch(`https://learn-server-six.vercel.app/card/${params.id}`)
       },
       {
         path: "/share/:id",
@@ -90,7 +90,7 @@ const router = createBrowserRouter([
       {
         path:"comment/:id",
         element:<Comment></Comment>,
-        loader:({params})=>fetch(`http://localhost:3005/mypost/${params.id}`)
+        loader:({params})=>fetch(`https://learn-server-six.vercel.app/mypost/${params.id}`)
       },
       // admin route here ... 
       {
