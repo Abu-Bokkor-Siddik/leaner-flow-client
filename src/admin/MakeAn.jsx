@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContex } from "../auth/AuthProvidev";
 import useAxiosP from "../hooks/useAxiosP";
+import Swal from 'sweetalert2'
 
 const MakeAn = () => {
   const{user}=useContext(AuthContex)
@@ -13,6 +14,7 @@ const MakeAn = () => {
     const description = e.target.description.value 
     const email = user?.email
     const date = new Date().toLocaleDateString() 
+    e.target.reset()
     const announceinfo ={
       image,
       name,
@@ -25,7 +27,12 @@ const MakeAn = () => {
     .then(res=>{
       console.log(res.data)
       if(res.data.insertedId){
-        alert('added')
+        Swal.fire({
+          title: "Annoucecement added ",
+          text: "You clicked the button!",
+          icon: "success"
+        });
+        
       }
     })
     console.log(announceinfo)

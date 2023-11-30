@@ -40,7 +40,7 @@ const difference = ()=>{
      
      </div>
  
-     <h1 className="my-2 pl-5">Title : {item.title}</h1>
+     <h1 className="my-2 pl-5  text-lg">Title : {item.title}</h1>
      <h1 className="my-2 pl-5 ">Tag : {item.tag}</h1>
      
  

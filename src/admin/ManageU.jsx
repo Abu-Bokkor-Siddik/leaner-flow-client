@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query"
 import useAxiosP from "../hooks/useAxiosP"
 import axios from "axios"
+import Swal from 'sweetalert2'
 
 
 const ManageU = () => {
@@ -20,7 +21,12 @@ const ManageU = () => {
       refetch()
       console.log(res.data)
       if(res.data.modifiedCount){
-        alert('admin added ')
+        Swal.fire({
+          title: "Good job!",
+          text: "You clicked the button!",
+          icon: "success"
+        });
+        
       }
     })
   }
@@ -31,10 +37,10 @@ const ManageU = () => {
     <thead>
       <tr>
          <th></th>
-        <th>User Name</th>
-        <th>User Email</th>
-        <th>Make Admin</th>
-        <th>Subscription</th>
+        <th className="text-xl">User Name</th>
+        <th className="text-xl">User Email</th>
+        <th className="text-xl">Make Admin</th>
+        <th className="text-xl">Subscription</th>
        
       </tr>
     </thead>
@@ -45,7 +51,7 @@ const ManageU = () => {
           <th>{index+1}</th>
           <td> {item.name}</td>
           <td>{item.email} </td>
-          <td>{ item.role==="admin"?"Admin":<button onClick={()=>handleradmin(item)}>user</button>}</td>
+          <td>{ item.role==="admin"?"Admin":<button className="btn btn-accent" onClick={()=>handleradmin(item)}>user</button>}</td>
           <td><button>{item.badge}</button></td>
         </tr>)
       }

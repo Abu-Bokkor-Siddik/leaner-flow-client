@@ -38,10 +38,10 @@ const Tabil = ({datas,refetch}) => {
     <thead className="min-w-[1200px]">
       <tr className="">
          <th></th>
-        <th>User Name</th>
-        <th>User Email</th>
-        <th>User or Admin</th>
-        <th>Delete</th>
+        <th className="text-xl">User Name</th>
+        <th className="text-xl">User Email</th>
+        <th className="text-xl">User or Admin</th>
+        <th className="text-xl">Delete</th>
        
        
       </tr>

@@ -5,6 +5,7 @@ import { AuthContex } from "../auth/AuthProvidev";
 import useAxiosP from "../hooks/useAxiosP";
 import useComment from "../hooks/useComment";
 import { useState } from "react";
+import Swal from 'sweetalert2'
 
 
 const Dynamic = () => {
@@ -13,13 +14,14 @@ const Dynamic = () => {
     const {user}=useContext(AuthContex)
     const axiosP =useAxiosP()
 // state 
-const [sms,setsms]=useState(false)
+// const [sms,setsms]=useState(false)
     console.log(data)
 
 
     const handel =(e)=>{
         e.preventDefault()
-        const comments = e.target.comment.value
+        const comments = e.target.comment.value 
+        e.target.reset()
         const commentinfo = {
           comments:comments,
           commenerEmail:user?.email,
@@ -35,12 +37,16 @@ const [sms,setsms]=useState(false)
         .then(res => {
           console.log(res.data)
           if(res.data.insertedId){
-            alert('added comment')
+            Swal.fire({
+              title: "Comment added ",
+              text: "You clicked the button!",
+              icon: "success"
+            });
             refetch()
-            setsms(true)
+            // setsms(true)
           }
         })
-        console.log(commentinfo)
+        // console.log(commentinfo)
 
         // console.log(comments)
     }
@@ -49,11 +55,11 @@ const [sms,setsms]=useState(false)
 
 // here is comment count use hook okk
     const{data:datas,refetch}=useComment(data.title)
-    console.log(datas)
+    // console.log(datas)
 
     // disable 
     const smsdisable = ()=>{
-      setsms(true)
+      // setsms(true)
     }
   return (
     <div className="min-h-[800px] max-w-[600px] mx-auto ">
@@ -61,8 +67,8 @@ const [sms,setsms]=useState(false)
     <CardDynamic data={data} datas={datas} refetch={refetch}></CardDynamic>
     <div className=" mx-auto flex flex-col justify-center items-center">
     <form   onSubmit={handel}>
-    <textarea  name="comment" className="textarea textarea-bordered lg:min-w-[400px] mx-auto" placeholder="Bio"></textarea>
-    <div className="lg:mx-48 my-5"><button disabled={sms}  className="btn btn-sm  btn-accent">Comment</button></div>
+    <textarea  name="comment" className="textarea textarea-bordered lg:min-w-[400px] mx-auto" placeholder="Comments here"></textarea>
+    <div className="lg:mx-48 my-5"><button   className="btn btn-sm  btn-accent">Comment</button></div>
     
     </form>
     

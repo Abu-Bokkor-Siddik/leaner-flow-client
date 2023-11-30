@@ -4,6 +4,7 @@ import useTotal from "../hooks/useTotal"
 import { PieChart, Pie,Cell, ResponsiveContainer, Legend, Tooltip } from 'recharts';
 import axios from "axios";
 import useAxiosP from "../hooks/useAxiosP";
+import Swal from 'sweetalert2'
 
 
 
@@ -49,10 +50,14 @@ const tagh = (e)=>{
   .then(res=>{
     console.log(res.data)
     if(res.data.insertedId){
-      alert('tag added')
+      Swal.fire({
+        title: "Good job!",
+        text: "You clicked the button!",
+        icon: "success"
+      });
     }
   })
-  console.log(taginfo)
+  // console.log(taginfo)
 }
 
   return (

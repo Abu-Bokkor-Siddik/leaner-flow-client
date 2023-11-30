@@ -9,6 +9,6 @@
 - Admin can Delete any user with valid reason .
 
 ### Admin functionality 
-- Admin can delete any user with an valid reason .
+- Admin can delete any user with an valid reason .Requirement  17 
 
-- [https://forum-e3e2b.web.app/](https://forum-e3e2b.web.app/) 
+- click here to see the side : [https://forum-e3e2b.web.app/](https://forum-e3e2b.web.app/) 

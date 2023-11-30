@@ -24,11 +24,11 @@ const Reported = () => {
     <thead className="min-w-[1200px]">
       <tr className="">
          <th></th>
-        <th>Post</th>
-        <th>Title</th>
-        <th>Commener Email</th>
-        <th>Report</th>
-        <th>Comment</th>
+        <th className="text-xl">Post</th>
+        <th className="text-xl">Title</th>
+        <th className="text-xl">Commener Email</th>
+        <th className="text-xl">Report</th>
+        <th className="text-xl">Comment</th>
        
       </tr>
     </thead>

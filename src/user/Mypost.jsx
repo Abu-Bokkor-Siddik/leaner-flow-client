@@ -67,17 +67,17 @@ const handledelete=(id)=>{
         <thead>
           <tr>
             <th></th>
-            <th>Post Title</th>
-            <th>Number of Vote</th>
-            <th>Comments</th>
-            <th>Delete</th>
+            <th className="text-xl">Post Title</th>
+            <th className="text-xl">Number of Vote</th>
+            <th className="text-xl">Comments</th>
+            <th className="text-xl">Delete</th>
           </tr>
         </thead>
         <tbody>
           {/* row 1 */}
           {
-            data?.map(item=> <tr key={item._id}>
-              <th>1</th>
+            data?.map((item,index)=> <tr key={item._id}>
+              <th>{index+1}</th>
               <td>{item.title}</td>
               <td>Upvote : {item.upvote} Downvote : {item.downvote}</td>
               <td><Link to={`/dashboard/comment/${item._id}`}><button>Comment</button></Link></td>
