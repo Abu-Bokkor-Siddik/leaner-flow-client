@@ -80,8 +80,8 @@ const handledelete=(id)=>{
               <th>{index+1}</th>
               <td>{item.title}</td>
               <td>Upvote : {item.upvote} Downvote : {item.downvote}</td>
-              <td><Link to={`/dashboard/comment/${item._id}`}><button>Comment</button></Link></td>
-              <td><button onClick={()=>handledelete(item._id)}>Delete</button></td>
+              <td><Link to={`/dashboard/comment/${item._id}`}><button className="btn btn-accent">Comment</button></Link></td>
+              <td><button className="btn btn-accent" onClick={()=>handledelete(item._id)}>Delete</button></td>
             </tr>)
           }
          

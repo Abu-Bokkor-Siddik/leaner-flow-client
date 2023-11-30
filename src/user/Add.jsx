@@ -11,9 +11,9 @@ const Add = () => {
   const {user}=useContext(AuthContex)
   // use hook for single user find  
   // todo data length baki/..... user find here 
-  const{data}=useMyP()
+  const{data,refetch}=useMyP()
   const{singel}=usePostadd()
-  console.log(data,'user single')
+  // console.log(data,'user single')
 
 
   const axiosp = useAxiosP();
@@ -25,6 +25,7 @@ const Add = () => {
     const cars = e.target.cars.value
     const description = e.target.description.value
     const image = e.target.image.value
+    e.target.reset()
   const CardItem = {
     name:name,
     email:email,
@@ -46,15 +47,16 @@ const Add = () => {
           text: "You clicked the button!",
           icon: "success"
         });
+        refetch()
       }
      })
 
   }
   console.log(data)
-  console.log(data?.badge==='bronze'&&singel?.length>5,'true or false')
+  console.log(data?.badge==='bronze'&&singel?.length>4,'true or false')
   return (
     <div>
-    {data?.badge==='bronze'&&singel?.length>5 ?<Link to="/member"><button className="btn mx-auto btn-accent">Member</button></Link>:
+    {data?.badge==='bronze'&&singel?.length>4 ?<Link to="/member"><button className="btn mx-auto btn-accent">Member</button></Link>:
     <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col ">
           <div className="card flex-shrink-0  shadow-2xl bg-slate-100 w-auto ">

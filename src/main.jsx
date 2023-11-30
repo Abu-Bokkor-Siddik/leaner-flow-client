@@ -67,7 +67,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/payment",
-        element: <Payment></Payment>,
+        element: <Privet><Payment></Payment></Privet>,
       },
     ],
   },
