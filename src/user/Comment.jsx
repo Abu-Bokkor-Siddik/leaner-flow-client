@@ -41,7 +41,11 @@ const Comment = () => {
     const res = axiosP.post("/report", reportinfo).then((result) => {
       console.log(result.data);
       if (result.data.insertedId) {
-        alert("added report");
+        Swal.fire({
+          title: "Report added",
+          text: "You clicked the button!",
+          icon: "success"
+        });
       }
     });
     console.log(reportinfo);
@@ -81,8 +85,8 @@ const Comment = () => {
               <th>1</th>
               <td> {item.commenerEmail}</td>
               <td>
-                comment {item.comments.slice(0, 20)}
-                <button onClick={()=>modal(item.comments)}>....</button>
+                 {item.comments.slice(0, 20)}
+                <button onClick={()=>modal(item.comments)}>..Read More</button>
               </td>
               <td>
                 <div className="form-control ">

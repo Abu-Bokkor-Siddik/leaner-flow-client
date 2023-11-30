@@ -51,7 +51,7 @@ const tagh = (e)=>{
     console.log(res.data)
     if(res.data.insertedId){
       Swal.fire({
-        title: "Good job!",
+        title: "Tag added",
         text: "You clicked the button!",
         icon: "success"
       });
