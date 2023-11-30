@@ -3,7 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import useAxiosP from "../hooks/useAxiosP";
 import { AuthContex } from "../auth/AuthProvidev";
 import axios from "axios";
-
+// import Swal from 'sweetalert2'
 
 const CheakFrom = () => {
     const {user}=useContext(AuthContex)
@@ -67,6 +67,7 @@ const CheakFrom = () => {
         console.log('payment indents',paymentIntent)
         console.log('payment indents',paymentIntent.id)
         alert(`${paymentIntent.id}`)
+       
         // update user put method 
         const userinfo ={
             badge:'gold',

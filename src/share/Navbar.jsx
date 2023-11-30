@@ -51,7 +51,7 @@ const Navbar = () => {
                   </svg>
                 </label>
               </div>
-              <div className=" px-2 mx-40 ">
+              <div className=" px-2 mx-auto lg:mx-40 ">
                 <div className="flex  justify-center items-center gap-3">
                   <img
                     className="h-16 w-16 rounded-full"
@@ -132,7 +132,7 @@ const Navbar = () => {
             aria-label="close sidebar"
             className="drawer-overlay"
           ></label>
-          <div className="menu p-4 w-80 min-h-full bg-base-200">
+          <div className="menu p-4 w-80 z-10 min-h-full bg-base-200">
             {/* Sidebar content here */}
             <div className="flex flex-col gap-2">
               <NavLink className="" to="/">

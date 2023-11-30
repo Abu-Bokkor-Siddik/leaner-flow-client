@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import { AuthContex } from "../auth/AuthProvidev"
 import { imgUpload } from "../hooks/Imageup"
 import axios from "axios"
+import Swal from 'sweetalert2'
 
 
 const SignUp = () => {
@@ -14,6 +15,7 @@ const SignUp = () => {
     const image = e.target.image.files[0] 
     const email = e.target.email.value 
     const password = e.target.password.value 
+     e.target.reset()
     
     console.log(name,image,email,password)
     try{
@@ -37,7 +39,12 @@ const SignUp = () => {
         .then(res => {
           console.log(res.user)
           if(res.data.insertedId){
-            alert('added ')
+            Swal.fire({
+              title: "Register successfully!",
+              text: "You clicked the button!",
+              icon: "success"
+            });
+            
           
           }
         

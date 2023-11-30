@@ -14,7 +14,7 @@ const Banner = ({setsearch}) => {
   <div className="hero-content text-center text-neutral-content">
     <div className="max-w-md">
     <form onSubmit={searchH} className="flex w-auto lg:min-w-[600px]"><input name="searchname" type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs text-black" />
-    <button   className="btn btn-primary">Search</button></form>
+    <button   className="btn z-0 btn-primary">Search</button></form>
     </div>
   </div>
 </div>

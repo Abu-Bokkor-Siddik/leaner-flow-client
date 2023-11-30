@@ -54,7 +54,7 @@ const Add = () => {
   console.log(data?.badge==='bronze'&&singel?.length>5,'true or false')
   return (
     <div>
-    {data?.badge==='bronze'&&singel?.length>5 ?<Link to="/member"><button className="btn btn-accent">Membership</button></Link>:
+    {data?.badge==='bronze'&&singel?.length>5 ?<Link to="/member"><button className="btn mx-auto btn-accent">Member</button></Link>:
     <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col ">
           <div className="card flex-shrink-0  shadow-2xl bg-slate-100 w-auto ">

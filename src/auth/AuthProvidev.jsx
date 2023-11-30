@@ -46,11 +46,7 @@ const logout = ()=>{
 const logins =(email,password)=>{
     setloading(true)
 
-    Swal.fire({
-      title: "login successfully",
-      text: "You clicked the button!",
-      icon: "success"
-    });
+   
     return signInWithEmailAndPassword(auth,email,password)
   }
 
