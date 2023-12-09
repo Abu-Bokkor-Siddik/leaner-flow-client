@@ -8,6 +8,9 @@
 - User can feedback in his comment.
 - Admin can Delete any user with valid reason .
 1. Forum base website here user can post any for help .
+2. have a admin role <br/>
+- Admin:email:programing@gmail.com
+- Admin:password:aaa@@@
 
 ## Technology
 - React.js
