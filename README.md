@@ -7,6 +7,16 @@
 - Have a payment stystem .
 - User can feedback in his comment.
 - Admin can Delete any user with valid reason .
+1. Forum base website here user can post any for help .
+
+## Technology
+- React.js
+- Mongo db 
+- Express.js
+- Mongo db
+- jwt 
+- firebase
+- postman 
 
 ### Admin functionality 
 - Admin can delete any user with an valid reason .Requirement  17 
