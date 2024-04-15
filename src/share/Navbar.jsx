@@ -29,7 +29,7 @@ const Navbar = () => {
           {/* Navbar */}
           <div className=" lg:w-auto navbar bg-base-300">
             {/**navbar 1200px */}
-            <div className=" max-w-[425px] lg:max-w-[1400px] mx-auto ">
+            <div className=" max-w-[425px]  lg:max-w-[1400px] lg:mx-auto">
               <div className="flex-none lg:hidden">
                 <label
                   htmlFor="my-drawer-3"
@@ -59,14 +59,14 @@ const Navbar = () => {
                     alt=""
                   />
 
-                  <p className="text-2xl font-bold">LEANER-FLOW</p>
+                  <pre className="lg:text-2xl font-bold">LEANER-FLOW</pre>
                 </div>
               </div>
-              <div className="flex-none hidden lg:block">
-                <div className="menu menu-horizontal">
+              <div className="flex-none z-50 hidden lg:block">
+                <div className="menu z-50 menu-horizontal">
                   {/* Navbar menu content here */}
 
-                  <div className="flex flex-2 gap-7 justify-center items-center  ">
+                  <div className="flex z-50 flex-2 gap-7  justify-center items-center  ">
                     <NavLink className="text-xl font-semibold" to="/">
                       Home
                     </NavLink>
@@ -126,13 +126,13 @@ const Navbar = () => {
           </div>
           {/* Page content here */}
         </div>
-        <div className="drawer-side">
+        <div className="drawer-side z-50">
           <label
             htmlFor="my-drawer-3"
             aria-label="close sidebar"
             className="drawer-overlay"
           ></label>
-          <div className="menu p-4 w-80 z-10 min-h-full bg-base-200">
+          <div className="menu p-4 w-80 z-50 min-h-full bg-base-200">
             {/* Sidebar content here */}
             <div className="flex flex-col gap-2">
               <NavLink className="" to="/">
