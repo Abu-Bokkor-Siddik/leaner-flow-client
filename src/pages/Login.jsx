@@ -89,11 +89,11 @@ const Login = () => {
                   Go Register
                 </Link>
               </p>
-              <div className="form-control mt-6">
+              <div className="form-control ">
                 <button className="btn btn-primary">Login</button>
               </div>
             </form>
-            <button onClick={googles} className="btn btn-primary mx-8">
+            <button onClick={googles} className="btn btn-primary mx-8 mb-4">
               google
             </button>
           </div>

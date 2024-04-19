@@ -22,7 +22,7 @@ const CardHome = ({ dataes }) => {
       >
         Popular base
       </button>
-      <div className="grid grid-cols-1 md:gap-4 md:grid-cols-2 lg:grid-cols-3 max-w-[1200px] justify-center items-center pl-8 md:pl-2 mx-12 lg:pl-8 lg:mx-auto">
+      <div className=" flex flex-col lg:grid  md:gap-4 md:grid-cols-2 lg:grid-cols-3 max-w-[1200px] justify-center items-center  md:pl-2 mx-12 lg:pl-8 lg:mx-auto">
         {datas?.map((item) => (
           <div
             key={item._id}

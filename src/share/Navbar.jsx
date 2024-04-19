@@ -97,7 +97,7 @@ const Navbar = () => {
                       </div>
                     )}
                     {isopen && (
-                      <div className="absolute  top-32 text-start w-44 bg-slate-50 h-auto rounded-xl p-3">
+                      <div className="absolute   top-32 text-start w-44 bg-slate-50 h-auto rounded-xl p-3">
                         <p>{user?.displayName}</p>
                         {
                           user&& isAdmin&&<Link to="/dashboard/admin">
@@ -112,7 +112,7 @@ const Navbar = () => {
                         </Link>
                         }
 
-                        <button onClick={logs} className="btn btn-accent mx-3">
+                        <button onClick={logs} className="btn bg-[#79d0e3]  mx-3">
                           logOut
                         </button>
                       </div>
@@ -132,7 +132,7 @@ const Navbar = () => {
             aria-label="close sidebar"
             className="drawer-overlay"
           ></label>
-          <div className="menu p-4 w-80 z-50 min-h-full bg-base-200">
+          <div className="menu text-lg p-4 w-80 z-50 min-h-full bg-base-200">
             {/* Sidebar content here */}
             <div className="flex flex-col gap-2">
               <NavLink className="" to="/">
@@ -141,9 +141,9 @@ const Navbar = () => {
               <NavLink to="/member">Membership</NavLink>
               <NavLink ><IoMdNotifications></IoMdNotifications></NavLink>
               <NavLink to="/login">Join US</NavLink>
-              {user?<button onClick={logs} className="btn btn-accent ">logOut</button>:
+              {user?<button onClick={logs} className="btn bg-[#79d0e3] ">logOut</button>:
               <NavLink to="/login">
-                <button className="btn btn-accent  ">login</button>
+                <button className="btn bg-[#79d0e3]  ">login</button>
               </NavLink>}
             </div>
           </div>
